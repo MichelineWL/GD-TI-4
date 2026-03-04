@@ -1,10 +1,82 @@
-[gd_scene load_steps=2 format=3 uid="uid://yqmk0vpvnyxr"]
+[gd_scene format=4 uid="uid://yqmk0vpvnyxr"]
 
 [ext_resource type="PackedScene" uid="uid://bc2fujtl13g10" path="res://scenes/Player.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://cluh2ekc38ktx" path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_gr_dirt.png" id="2_bwv4p"]
+[ext_resource type="Texture2D" uid="uid://chgqimvh7rdh6" path="res://assets/Familiar Looking Rocket.png" id="3_odhdn"]
+[ext_resource type="PackedScene" uid="uid://cqntdxpl0oyu0" path="res://scenes/AreaTrigger.tscn" id="4_dw26h"]
+[ext_resource type="Script" uid="uid://bm4rfm2jkrx0n" path="res://scenes/spawner.gd" id="5_lrl65"]
+[ext_resource type="PackedScene" uid="uid://durcoiucnwrhw" path="res://scenes/LoseScreenFish.tscn" id="6_76388"]
 
-[node name="Level1" type="Node2D"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_odhdn"]
+texture = ExtResource("2_bwv4p")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64, -64, -64, -64, -64)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64, -64, -64, -64, -64)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, 25.300003, 52.25, 1.0999985, 47.850006, -19.250008, 35.75, -46.750008, -3.2999954)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, -21.449997, 35.75, 13.75, 7.149994, 35.199997, -21.450005, 47.850006, -64, 64)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, 34.09999, 40.15001, 14.300003, 26.949997, -7.1500015, 14.300003, -33.000008, -4.399994, -64, -24.75, -64, -64)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, -20.900002, 10.449997, 14.850006, -41.236927, 45.65332, -14.300003, 29.15001, -64, 64, -64, -64, -64, -64)
+7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64, -64, -64, -64, -64)
+8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64, -64, -64, -64, -64)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(64, -64, 64, 7.7000046, -64, 7.1500015, -64, -64)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(64, -64, 64, 7.7000046, -64, 7.1500015, -64, -64)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(64, -64, 64, 7.7000046, -64, 7.1500015, -64, -64)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(64, -64, 64, 7.7000046, -64, 7.1500015, -64, -64)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, 64, -64, 64, -64, -64, -64, -64)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(64, -64, 64, 64, -64, 64)
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64, -64, -64, -64, -64)
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64, -64, -64, -64, -64)
+8:1/0 = 0
+8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64, -64, -64, -64, -64)
 
-[node name="Player" parent="." instance=ExtResource("1")]
-position = Vector2(445, 209)
+[sub_resource type="TileSet" id="TileSet_dw26h"]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_odhdn")
+
+[node name="Level1" type="Node2D" unique_id=708025400]
+
+[node name="Player" parent="." unique_id=964911126 instance=ExtResource("1")]
+position = Vector2(95, 65)
 collision_layer = 3
 collision_mask = 3
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=419726561]
+tile_map_data = PackedByteArray("AAAAAAEAAAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAADAAEAAAAAAAAAAAAFAAEAAAAFAAAAAAAGAAEAAAAGAAAAAAACAP//AAADAAAAAAADAP//AAAAAAAAAAAEAP//AAAEAAAAAAA=")
+tile_set = SubResource("TileSet_dw26h")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1546007369]
+position = Vector2(855.125, 61.125008)
+scale = Vector2(0.32641217, 0.2561856)
+texture = ExtResource("3_odhdn")
+
+[node name="Area2D" parent="Sprite2D" unique_id=398866920 instance=ExtResource("4_dw26h")]
+sceneName = "WinScreen"
+
+[node name="DeathZone" parent="." unique_id=1977236216 instance=ExtResource("4_dw26h")]
+position = Vector2(400, 600)
+scale = Vector2(100, 4)
+sceneName = "Level1"
+
+[node name="Spawner" type="Node2D" parent="." unique_id=1243182897]
+position = Vector2(90, -603)
+script = ExtResource("5_lrl65")
+obstacle = ExtResource("6_76388")

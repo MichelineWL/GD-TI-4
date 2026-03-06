@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dvl2hj7yl3x1l"]
+
+[ext_resource type="Script" uid="uid://bkee1r35g8s3j" path="res://ClashFishCondition.gd" id="1_6delx"]
+[ext_resource type="Texture2D" uid="uid://cm7shhx4j4f1r" path="res://assets/kenney_platformerpack/PNG/Enemies/barnacle.png" id="2_5f14r"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fjn5h"]
+radius = 45.0
+height = 134.0
+
+[node name="RigidBody2D" type="RigidBody2D" unique_id=1839891784]
+contact_monitor = true
+max_contacts_reported = 4
+script = ExtResource("1_6delx")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1105847272]
+position = Vector2(-23, -8)
+rotation = -1.5707964
+texture = ExtResource("2_5f14r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1059567830]
+position = Vector2(-22, -3)
+shape = SubResource("CapsuleShape2D_fjn5h")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

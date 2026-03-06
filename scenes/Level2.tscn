@@ -1,0 +1,125 @@
+[gd_scene format=4 uid="uid://doctu3eq76373"]
+
+[ext_resource type="PackedScene" uid="uid://bqm8ylbswiqak" path="res://scenes/PlayerLevel2.tscn" id="1_wd6ad"]
+[ext_resource type="Texture2D" uid="uid://1cmkdw30hlrq" path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_gr_snow.png" id="2_snow"]
+[ext_resource type="Texture2D" uid="uid://chgqimvh7rdh6" path="res://assets/Familiar Looking Rocket.png" id="3_rocket"]
+[ext_resource type="PackedScene" uid="uid://cqntdxpl0oyu0" path="res://scenes/AreaTrigger.tscn" id="4_trigger"]
+[ext_resource type="Script" uid="uid://bm4rfm2jkrx0n" path="res://scenes/spawner.gd" id="5_spawner"]
+[ext_resource type="Texture2D" uid="uid://dvp0jyp34826e" path="res://assets/kenney_platformerpack/PNG/Items/coinGold.png" id="7_3aekd"]
+[ext_resource type="PackedScene" uid="uid://dvl2hj7yl3x1l" path="res://scenes/FallingSpike.tscn" id="9_khw7m"]
+[ext_resource type="PackedScene" uid="uid://c8gq1q3o" path="res://scenes/Ladybug.tscn" id="10_wd6ad"]
+[ext_resource type="Texture2D" uid="uid://u1jtuxja80pp" path="res://assets/kenney_platformerpack/PNG/Enemies/barnacle.png" id="11_2jdof"]
+[ext_resource type="Script" uid="uid://dtqtcs0622cde" path="res://scenes/TeleportPortal.gd" id="11_portal"]
+[ext_resource type="Texture2D" uid="uid://6xxt8a6c4o8t" path="res://assets/kenney_platformerpack/PNG/Enemies/ladybug_fly.png" id="13_rfxww"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_snow"]
+texture = ExtResource("2_snow")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64, -64, -64, -64, -64)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64, -64, -64, -64, -64)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, 25.300003, 52.25, 1.0999985, 47.850006, -19.250008, 35.75, -46.750008, -3.2999954)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, -21.449997, 35.75, 13.75, 7.149994, 35.199997, -21.450005, 47.850006, -64, 64)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, 34.09999, 40.15001, 14.300003, 26.949997, -7.1500015, 14.300003, -33.000008, -4.399994, -64, -24.75, -64, -64)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, -20.900002, 10.449997, 14.850006, -41.236927, 45.65332, -14.300003, 29.15001, -64, 64, -64, -64, -64, -64)
+7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64, -64, -64, -64, -64)
+8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64, -64, -64, -64, -64)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(64, -64, 64, 7.7000046, -64, 7.1500015, -64, -64)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(64, -64, 64, 7.7000046, -64, 7.1500015, -64, -64)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(64, -64, 64, 7.7000046, -64, 7.1500015, -64, -64)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(64, -64, 64, 7.7000046, -64, 7.1500015, -64, -64)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, 64, -64, 64, -64, -64, -64, -64)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(64, -64, 64, 64, -64, 64)
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64, -64, -64, -64, -64)
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64, -64, -64, -64, -64)
+8:1/0 = 0
+8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64, -64, -64, -64, -64)
+
+[sub_resource type="TileSet" id="TileSet_snow"]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_snow")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wd6ad"]
+size = Vector2(256, 375.1608)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cd1f0"]
+size = Vector2(400, 100)
+
+[node name="Level2" type="Node2D" unique_id=1816357444]
+
+[node name="PlayerLevel2" parent="." unique_id=511712596 instance=ExtResource("1_wd6ad")]
+position = Vector2(95, -65)
+max_jumps = 3
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=419726562]
+tile_map_data = PackedByteArray("AAABAAAAAAAAAAAAAAD//wAAAAAAAAAAAAD7/wAAAAAAAAAAAAD8/wAAAAAAAAAAAAD9/wAAAAAAAAAAAAD+/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA5AAAAAAAAAAAAAAA6AAAAAAAAAAAAAAA7AAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA9AAAAAAAAAAAAAAA+AAAAAAAAAAAAAAA/AAAAAAAAAAAAAABAAAAAAAAAAAAAAAAzAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA3AAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAPAP//AAAAAAAAAAAQAP//AAAAAAAAAAARAP//AAAAAAAAAAASAP//AAAAAAAAAAATAP//AAAAAAAAAAAUAP//AAAAAAAAAAAVAP7/AAAAAAAAAAAWAP7/AAAAAAAAAAAXAP7/AAAAAAAAAAAYAP7/AAAAAAAAAAAZAP7/AAAAAAAAAAAaAP7/AAAAAAAAAAAbAP7/AAAAAAAAAAAcAP7/AAAAAAAAAAAdAP7/AAAAAAAAAAAiAP//AAAAAAAAAAAjAP//AAAAAAAAAAAkAP//AAAAAAAAAAAlAP//AAAAAAAAAAAmAP//AAAAAAAAAAAnAP//AAAAAAAAAAAoAP//AAAAAAAAAAApAP//AAAAAAAAAAAqAP//AAAAAAAAAAArAP//AAAAAAAAAAAsAP//AAAAAAAAAAAtAP//AAAAAAAAAAAuAP3/AAAAAAAAAAAvAP3/AAAAAAAAAAAwAP3/AAAAAAAAAAAxAP3/AAAAAAAAAAAyAP3/AAAAAAAAAAA1AAAAAAAAAAAAAAA2AAAAAAAAAAAAAABHAP7/AAAAAAAAAABIAP7/AAAAAAAAAABJAP7/AAAAAAAAAABKAP7/AAAAAAAAAABLAP7/AAAAAAAAAABMAP7/AAAAAAAAAABNAP7/AAAAAAAAAABOAP7/AAAAAAAAAABPAP7/AAAAAAAAAABQAP7/AAAAAAAAAABRAP7/AAAAAAAAAABSAP7/AAAAAAAAAABTAP7/AAAAAAAAAABUAP7/AAAAAAAAAABVAP7/AAAAAAAAAABWAP7/AAAAAAAAAABXAP7/AAAAAAAAAABYAP7/AAAAAAAAAABZAP7/AAAAAAAAAAAeAP//AAAAAAAAAAAfAP//AAAAAAAAAAAgAP//AAAAAAAAAAAhAP//AAAAAAAAAAAuAAAAAAAAAAAAAAAvAAAAAAAAAAAAAAAwAAEAAAAAAAAAAAAxAAEAAAAAAAAAAAAyAAEAAAAAAAAAAABBAAEAAAAAAAAAAABCAAEAAAAAAAAAAABDAAEAAAAAAAAAAABDAAAAAAAAAAAAAABEAAAAAAAAAAAAAABFAAAAAAAAAAAAAABGAP//AAAAAAAAAAAKAAEAAAAAAAAAAAAMAAEAAAAAAAAAAAANAAEAAAAAAAAAAAAOAAAAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_snow")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1546007370]
+position = Vector2(11348, -472.00003)
+scale = Vector2(0.9902436, 0.8496495)
+texture = ExtResource("3_rocket")
+
+[node name="Area2D" parent="Sprite2D" unique_id=398866920 instance=ExtResource("4_trigger")]
+sceneName = "WinScreen"
+
+[node name="CustomRocketCollision" type="CollisionShape2D" parent="Sprite2D/Area2D" unique_id=1183480675]
+position = Vector2(0, 59.580414)
+shape = SubResource("RectangleShape2D_wd6ad")
+
+[node name="TeleportPortal" type="Area2D" parent="." unique_id=159512638]
+position = Vector2(1600, 384)
+script = ExtResource("11_portal")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TeleportPortal" unique_id=1600952120]
+shape = SubResource("RectangleShape2D_cd1f0")
+
+[node name="Sprite2D" type="Sprite2D" parent="TeleportPortal" unique_id=1298287174]
+position = Vector2(0, -50)
+scale = Vector2(4, 4)
+texture = ExtResource("7_3aekd")
+
+[node name="SpawnerBarnacle" type="Node2D" parent="." unique_id=594516651]
+position = Vector2(3072, -800)
+script = ExtResource("5_spawner")
+obstacle = ExtResource("9_khw7m")
+
+[node name="DummyVisual" type="Sprite2D" parent="SpawnerBarnacle" unique_id=1844883918]
+position = Vector2(0, 476)
+texture = ExtResource("11_2jdof")
+
+[node name="SpawnerLadybug" type="Node2D" parent="." unique_id=618161612]
+position = Vector2(7040, -200)
+script = ExtResource("5_spawner")
+obstacle = ExtResource("10_wd6ad")
+
+[node name="DummyVisual" type="Sprite2D" parent="SpawnerLadybug" unique_id=1491409732]
+texture = ExtResource("13_rfxww")
+
+[node name="LadybugPatrol" parent="." unique_id=1895916385 instance=ExtResource("10_wd6ad")]
+position = Vector2(5120, -192)
+
+[node name="DeathZone" parent="." unique_id=823779304 instance=ExtResource("4_trigger")]
+position = Vector2(5120, 1024)
+scale = Vector2(200, 4)
+sceneName = "Level2"
+
+[connection signal="body_entered" from="TeleportPortal" to="TeleportPortal" method="_on_body_entered"]

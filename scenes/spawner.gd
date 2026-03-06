@@ -2,7 +2,12 @@ extends Node2D
 
 @export var obstacle : PackedScene
 
+@export var spawn_time: float = 5.0
+
 func _ready():
+	var dummy = get_node_or_null("DummyVisual")
+	if dummy:
+		dummy.hide()
 	repeat()
 
 func spawn():
@@ -16,5 +21,5 @@ func spawn():
 
 func repeat():
 	spawn()
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(spawn_time).timeout
 	repeat()

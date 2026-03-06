@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c8gq1q3o"]
+
+[ext_resource type="Texture2D" path="res://assets/kenney_platformerpack/PNG/Enemies/ladybug_fly.png" id="1_uisx6"]
+[ext_resource type="Script" path="res://scenes/Ladybug.gd" id="2_ladybug"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8binx"]
+radius = 30.0
+
+[node name="Ladybug" type="Area2D"]
+script = ExtResource("2_ladybug")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_uisx6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_8binx")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
